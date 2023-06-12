@@ -14,9 +14,13 @@ vocabulary while enjoying the fast-paced gameplay of osu!.
 
 To start your language learning journey with osu!gengo, follow these steps:
  - Download osu!lazer (obviously)
- - Download and install Gengo.dll (conveniently provided in the Releases tab of this repository)
+ - Download and move the Gengo.dll file (conveniently provided in the Releases tab of this repository) in the correct location for osu!lazer to pickup 
+   - `%AppData%/osu/rulesets` for Windows users, `~/.local/share/osu/rulesets` for Linux/MacOS users
  - Download Anki (Although we assume you already know what Anki is, how it works, and have a working deck that you regularly look after)
- - Download our [custom fork of Anki Connect](https://github.com/0xdeadbeer/anki-api) designed to work along osu!gengo and fascilitate problem solving on the API side in the future 
+ - Add our [custom fork of Anki Connect - 530824608](https://ankiweb.net/shared/info/530824608) to Anki. 
+   - This is an Add-on designed to work alongside osu!gengo and fascilitate the process of fetching card/deck information from your Anki application 
+ - After successfully adding the Anki Connect Addon to Anki, restart the application
+ - Open osu!lazer with the ruleset and proceed to configuring osu!gengo down below
 
 ### osu!gengo settings
 
