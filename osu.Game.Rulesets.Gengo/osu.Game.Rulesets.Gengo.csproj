@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Project">
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyTitle>osu.Game.Rulesets.Gengo</AssemblyTitle>
+    <OutputType>Library</OutputType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RootNamespace>osu.Game.Rulesets.Gengo</RootNamespace>
+    <!--<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>-->
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- ~~WARNING: here adjust the location for your osu.Game.csproj file since it might be out of place~~ -->
+    <ProjectReference Include="..\..\osu.Game\osu.Game.csproj" />
+      <!--<PackageReference Include="ppy.osu.Game" Version="2023.605.0" />-->
+  </ItemGroup>
+</Project>
