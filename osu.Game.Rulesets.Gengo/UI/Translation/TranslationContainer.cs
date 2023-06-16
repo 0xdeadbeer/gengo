@@ -29,11 +29,14 @@ namespace osu.Game.Rulesets.Gengo.UI.Translation
 
         private Random leftRightOrderRandom;
 
+        /// <summary>
+        /// Function to update the text of the two translation words (<see cref="leftWordText"/>, <see cref="rightWordText"/>)
+        /// </summary>
         public void UpdateWordTexts() {
             if (translationsLine.Count <= 0 || fakesLine.Count <= 0)
                 return;
 
-            // randomly (seed from beatmap) decide whether the left or right word will be the bait/correct translation of the current hitobject
+            // Randomly (seeded by the hash of the beatmap) decide whether the left or right word will be the bait/correct translation of the current HitObject 
             if (leftRightOrderRandom.NextDouble() > 0.5) {
                 leftWordText.Text = translationsLine[0].translatedText;
                 rightWordText.Text = fakesLine[0].translatedText;
@@ -42,15 +45,20 @@ namespace osu.Game.Rulesets.Gengo.UI.Translation
                 rightWordText.Text = translationsLine[0].translatedText;
             }
         }
+
+        /// <summary>
+        /// Function to add a new card to record. (function takes a fake card as well)
+        /// </summary>
         public void AddCard(Card translationCard, Card fakeCard) {
-            // translationsLine.Insert(0, translationCard);
-            // fakesLine.Insert(0, fakeCard);
             translationsLine.Add(translationCard);
             fakesLine.Add(fakeCard);
 
             if (translationsLine.Count == 1)
                 UpdateWordTexts();
         }
+        /// <summary>
+        /// Function to remove the first card (translation + fake) from their lines
+        /// </summary>
         public void RemoveCard() {
             if (translationsLine.Count <= 0)
                 return;
@@ -61,9 +69,6 @@ namespace osu.Game.Rulesets.Gengo.UI.Translation
             UpdateWordTexts();
         }
 
-        public TranslationContainer() {
-        }
-
         [BackgroundDependencyLoader]
         public void load() {
             // convert from string -> bytes -> int32
@@ -72,6 +77,8 @@ namespace osu.Game.Rulesets.Gengo.UI.Translation
 
             RelativeSizeAxes = Axes.X;
             AutoSizeAxes = Axes.Y;
+            Anchor = Anchor.TopCentre; 
+            Origin = Anchor.TopCentre;
             ColumnDimensions = new[] { 
                 new Dimension(GridSizeMode.Distributed),
                 new Dimension(GridSizeMode.Distributed),

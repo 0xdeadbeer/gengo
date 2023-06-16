@@ -7,6 +7,7 @@ using osu.Framework.Allocation;
 using osu.Framework.Logging;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
+using osu.Game.Overlays;
 using osu.Game.Rulesets.UI;
 using osu.Game.Rulesets.UI.Scrolling;
 using osu.Game.Rulesets.Gengo.UI.Cursor;
@@ -31,7 +32,6 @@ namespace osu.Game.Rulesets.Gengo.UI
 
         [Cached]
         protected readonly TranslationContainer translationContainer = new TranslationContainer();
-
         [Cached]
         protected readonly AnkiAPI anki = new AnkiAPI();
 
@@ -41,8 +41,6 @@ namespace osu.Game.Rulesets.Gengo.UI
             AddInternal(anki);
             AddInternal(playfieldContainer);
 
-            translationContainer.Anchor = Anchor.TopCentre;
-            translationContainer.Origin = Anchor.Centre;
             HitObjectContainer.Anchor = Anchor.TopCentre;
             HitObjectContainer.Origin = Anchor.Centre;
 

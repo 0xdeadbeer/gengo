@@ -15,7 +15,9 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Input.Bindings;
 using osu.Framework.Input.Events;
 using osu.Framework.Logging;
+using osu.Framework.Screens;
 using osu.Game.Audio;
+using osu.Game.Screens;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Objects.Drawables;
 using osu.Game.Rulesets.Scoring;
@@ -55,13 +57,12 @@ namespace osu.Game.Rulesets.Gengo.Objects.Drawables
         [BackgroundDependencyLoader]
         private void load(TextureStore textures)
         {
-            assignedCard = anki.FetchRandomCard() ?? new Card("", "", "");
-            baitCard = anki.FetchRandomCard() ?? new Card("", "", "");
+            assignedCard = anki.FetchRandomCard();
+            baitCard = anki.FetchRandomCard();
 
             translationContainer.AddCard(assignedCard, baitCard);
 
             AddInternal(new CircularContainer {
-                // RelativeSizeAxes = Axes.Both,
                 AutoSizeAxes = Axes.Both,
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
